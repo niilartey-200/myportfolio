@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header, footer {
+  background-color: #222222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #ebe4e4;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+
+.home .intro {
+  text-align: center;
+  padding: 2rem;
+}
+
+#profile-photo {
+  width: 150px;
+  border-radius: 10px 60px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+#profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.projects {
+  padding: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.about-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+.contact-section {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #fb9c87;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+/* @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+} */
+
+  </style>
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home">
+    <section class="intro">
+      <img src="og.jpg.jpg" alt="My Photo" id="profile-photo">
+      <h2>Hello, I'm Niilartey S Awuletey</h2>
+      <p>Web Developer | Designer | Coder</p>
+    </section>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Niilartey Awuletey. All rights reserved.</p>
+  </footer>
+
+  <!-- About Modal -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>About Me</h2>
+      <p>I am a passionate web developer with experience in creating dynamic websites using HTML, CSS, and JavaScript.</p>
+    </div>
+  </div>
+
+  
+</body>
+</html>
+
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  
+</head>
+<body>
+  <!-- <header>
+    <nav class="navbar">
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header> -->
+
+  <main class="about">
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p>I am Niilartey Awuletey, a creative front-end developer with a passion for building engaging user experiences. I specialize in responsive design, CSS animations, and interactive interfaces.</p>
+      <p>My skills include HTML5, CSS3, JavaScript, and etc. I am always eager to learn new technologies and improve my craft.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Niilartey Awuletey. All rights reserved.</p>
+  </footer>
+  
+  
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+</head>
+<body>
+  <!-- <header>
+    <nav class="navbar">
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header> -->
+
+  <main class="contact">
+    <section class="contact-section">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button id="btn" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div id="confirm-modal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to submit this form?</p>
+      <button id="confirm-submit">Yes</button>
+      <button id="cancel-submit">No</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Niilartey Awuletey ID 9634. All rights reserved.</p>
+  </footer>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
